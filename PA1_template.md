@@ -28,6 +28,7 @@ Calculate the total number of steps taken per day
 ```r
 steps_per_day = with(df,tapply(df$steps, as.factor(df$date), sum, na.rm=T))
 ```
+
 Make a histogram of the total number of steps taken each day  
 
 ```r
@@ -101,6 +102,7 @@ complete_df = df[!is.na(df$steps),]
 mean_steps = with(complete_df, tapply(steps, complete_df$interval, mean))
 missing$steps = mean_steps
 ```
+
 Create a new dataset that is equal to the original dataset but with the missing data filled in.
 Make a histogram of the total number of steps taken each day
 
@@ -132,9 +134,10 @@ print(paste("The median of the total number of steps taken per day is:",as.chara
 ```
 ## [1] "The median of the total number of steps taken per day is: 10766.1886792453"
 ```
+
 Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?  
 
-Yes, the mean and median differ from the first part of the assignment, imputing the missing data makes the data more symmetric. 
+Answer: Yes, the mean and median differ from the first part of the assignment, imputing the missing data makes the data more symmetric. 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
